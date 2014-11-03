@@ -33,6 +33,7 @@ import org.springsource.restbucks.core.MonetaryAmount;
  * 
  * @author Oliver Gierke
  */
+@SuppressWarnings("ALL")
 public class OrderRepositoryIntegrationTest extends AbstractIntegrationTest {
 
 	@Autowired

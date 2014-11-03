@@ -46,6 +46,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * 
  * @author Oliver Gierke
  */
+@SuppressWarnings("ALL")
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration

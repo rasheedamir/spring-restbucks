@@ -37,13 +37,22 @@ import org.springsource.restbucks.payment.OrderPaidEvent;
  * 
  * @author Oliver Gierke
  */
+@SuppressWarnings("ALL")
 @Slf4j
 @Service
-@AllArgsConstructor(onConstructor = @__(@Autowired))
 class Engine implements ApplicationListener<OrderPaidEvent>, InProgressAware {
 
 	private final @NonNull OrderRepository repository;
 	private final Set<Order> ordersInProgress = Collections.newSetFromMap(new ConcurrentHashMap<Order, Boolean>());
+
+    /**
+     *
+     * @param repository
+     */
+    @Autowired
+    public Engine(final OrderRepository repository) {
+        this.repository = repository;
+    }
 
 	/*
 	 * (non-Javadoc)

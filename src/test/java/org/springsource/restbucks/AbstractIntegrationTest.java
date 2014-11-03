@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springsource.restbucks.Restbucks.ApplicationConfiguration;
 
 /**
- * Base class to implement transactiona integration tests using the root application configuration.
+ * Base class to implement transactional integration tests using the root application configuration.
  * 
  * @author Oliver Gierke
  */

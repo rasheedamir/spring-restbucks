@@ -33,9 +33,9 @@ import org.springsource.restbucks.payment.Payment.Receipt;
  * 
  * @author Oliver Gierke
  */
+@SuppressWarnings("ALL")
 @Service
 @Transactional
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 class PaymentServiceImpl implements PaymentService {
 
 	private final @NonNull CreditCardRepository creditCardRepository;
@@ -43,10 +43,19 @@ class PaymentServiceImpl implements PaymentService {
 	private final @NonNull OrderRepository orderRepository;
 	private final @NonNull ApplicationEventPublisher publisher;
 
-	/* 
-	 * (non-Javadoc)
-	 * @see org.springsource.restbucks.payment.PaymentService#pay(org.springsource.restbucks.order.Order, org.springsource.restbucks.payment.Payment)
-	 */
+    @Autowired
+    public PaymentServiceImpl(final CreditCardRepository creditCardRepository, final PaymentRepository paymentRepository,
+                       final OrderRepository orderRepository, ApplicationEventPublisher publisher) {
+        this.creditCardRepository = creditCardRepository;
+        this.paymentRepository = paymentRepository;
+        this.orderRepository = orderRepository;
+        this.publisher = publisher;
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see org.springsource.restbucks.payment.PaymentService#pay(org.springsource.restbucks.order.Order, org.springsource.restbucks.payment.Payment)
+     */
 	@Override
 	public CreditCardPayment pay(Order order, CreditCardNumber creditCardNumber) {
 

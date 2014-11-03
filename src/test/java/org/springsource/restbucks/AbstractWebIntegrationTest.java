@@ -40,6 +40,7 @@ import org.springsource.restbucks.Restbucks.WebConfiguration;
  * 
  * @author Oliver Gierke
  */
+@SuppressWarnings("ALL")
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @SpringApplicationConfiguration(classes = WebConfiguration.class)

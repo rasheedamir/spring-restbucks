@@ -49,14 +49,25 @@ import org.springsource.restbucks.payment.PaymentService;
  * 
  * @author Oliver Gierke
  */
+@SuppressWarnings("ALL")
 @Controller
 @RequestMapping("/orders/{id}")
 @ExposesResourceFor(Payment.class)
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class PaymentController {
 
 	private final @NonNull PaymentService paymentService;
 	private final @NonNull EntityLinks entityLinks;
+
+    /**
+     *
+     * @param paymentService
+     * @param entityLinks
+     */
+    @Autowired
+    public PaymentController(final PaymentService paymentService, final EntityLinks entityLinks) {
+        this.paymentService = paymentService;
+        this.entityLinks = entityLinks;
+    }
 
 	/**
 	 * Accepts a payment for an {@link Order}

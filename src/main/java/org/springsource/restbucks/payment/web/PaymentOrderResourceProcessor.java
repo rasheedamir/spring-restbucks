@@ -30,10 +30,14 @@ import org.springsource.restbucks.order.Order;
  * @author Oliver Gierke
  */
 @Component
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 class PaymentOrderResourceProcessor implements ResourceProcessor<Resource<Order>> {
 
 	private final @NonNull PaymentLinks paymentLinks;
+
+    @Autowired
+    public PaymentOrderResourceProcessor(final PaymentLinks paymentLinks) {
+        this.paymentLinks = paymentLinks;
+    }
 
 	/* 
 	 * (non-Javadoc)

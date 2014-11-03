@@ -47,6 +47,7 @@ import com.jayway.jsonpath.JsonPath;
  * @see http://bit.ly/UIcDvq
  * @author Oliver Gierke
  */
+@SuppressWarnings("ALL")
 @Slf4j
 public class PaymentProcessIntegrationTest extends AbstractWebIntegrationTest {
 

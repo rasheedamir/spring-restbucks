@@ -40,6 +40,7 @@ import org.springframework.transaction.event.TransactionAwareApplicationEventMul
  * @see SpringApplication
  * @author Oliver Gierke
  */
+@SuppressWarnings("ALL")
 public class Restbucks extends SpringBootServletInitializer {
 
 	public static String CURIE_NAMESPACE = "restbucks";

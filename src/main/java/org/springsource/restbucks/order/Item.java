@@ -50,7 +50,6 @@ public class Item extends AbstractEntity {
 	 * @param quantity
 	 * @param milk
 	 * @param size
-	 * @param cost
 	 */
 	public Item(String name, int quantity, Milk milk, Size size, MonetaryAmount price) {
 

@@ -32,8 +32,8 @@ import org.springsource.restbucks.payment.Payment.Receipt;
  * 
  * @author Oliver Gierke
  */
+@SuppressWarnings("ALL")
 @Component
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 class PaymentLinks {
 
 	static final String PAYMENT = "/payment";
@@ -42,6 +42,11 @@ class PaymentLinks {
 	static final String RECEIPT_REL = "receipt";
 
 	private final @NonNull EntityLinks entityLinks;
+
+    @Autowired
+    PaymentLinks(final EntityLinks entityLinks) {
+        this.entityLinks = entityLinks;
+    }
 
 	/**
 	 * Returns the {@link Link} to point to the {@link Payment} for the given {@link Order}.

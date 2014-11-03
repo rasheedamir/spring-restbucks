@@ -30,6 +30,7 @@ import org.springsource.restbucks.order.OrderRepository;
  * 
  * @author Oliver Gierke
  */
+@SuppressWarnings("ALL")
 public class PaymentServiceIntegrationTest extends AbstractIntegrationTest {
 
 	@Autowired PaymentService paymentService;

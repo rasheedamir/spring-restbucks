@@ -28,6 +28,7 @@ import org.springframework.stereotype.Service;
  * 
  * @author Oliver Gierke
  */
+@SuppressWarnings("ALL")
 @Service
 @Slf4j
 class PaymentInitializer {

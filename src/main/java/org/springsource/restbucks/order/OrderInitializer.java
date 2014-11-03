@@ -19,6 +19,7 @@ import static org.springsource.restbucks.core.MonetaryAmount.*;
 
 import java.util.Arrays;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -29,7 +30,9 @@ import org.springsource.restbucks.core.MonetaryAmount;
  * 
  * @author Oliver Gierke
  */
+@SuppressWarnings("ALL")
 @Service
+@Slf4j
 class OrderInitializer {
 
 	/**
@@ -51,5 +54,8 @@ class OrderInitializer {
 		Order cappuchinoOrder = new Order(cappuchino);
 
 		orders.save(Arrays.asList(javaChipOrder, cappuchinoOrder));
+
+        log.info("Order {} created!", javaChipOrder);
+        log.info("Order {} created!", cappuchinoOrder);
 	}
 }

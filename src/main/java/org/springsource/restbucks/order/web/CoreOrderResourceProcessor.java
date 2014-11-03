@@ -31,14 +31,19 @@ import org.springsource.restbucks.order.Order;
  * 
  * @author Oliver Gierke
  */
+@SuppressWarnings("ALL")
 @Component
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 class CoreOrderResourceProcessor implements ResourceProcessor<Resource<Order>> {
 
 	public static final String CANCEL_REL = "cancel";
 	public static final String UPDATE_REL = "update";
 
 	private final @NonNull EntityLinks entityLinks;
+
+    @Autowired
+    public CoreOrderResourceProcessor(final EntityLinks entityLinks) {
+        this.entityLinks = entityLinks;
+    }
 
 	/* 
 	 * (non-Javadoc)

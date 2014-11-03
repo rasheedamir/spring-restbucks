@@ -43,8 +43,8 @@ import org.springsource.restbucks.order.OrderRepository;
  * 
  * @author Oliver Gierke
  */
+@SuppressWarnings("ALL")
 @Controller
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 class EngineController implements ResourceProcessor<RepositoryLinksResource> {
 
 	public static final String ENGINE_REL = "engine";
@@ -52,6 +52,12 @@ class EngineController implements ResourceProcessor<RepositoryLinksResource> {
 
 	private final @NonNull InProgressAware processor;
 	private final @NonNull OrderRepository repository;
+
+    @Autowired
+    public EngineController(final InProgressAware processor, final OrderRepository repository) {
+        this.processor = processor;
+        this.repository = repository;
+    }
 
 	/**
 	 * Exposes all {@link Order}s currently in preparation.

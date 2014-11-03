@@ -30,6 +30,7 @@ import org.springsource.restbucks.AbstractIntegrationTest;
  * 
  * @author Oliver Gierke
  */
+@SuppressWarnings("ALL")
 public class CreditCardRepositoryIntegrationTest extends AbstractIntegrationTest {
 
 	@Autowired CreditCardRepository repository;
